@@ -1,0 +1,175 @@
+[
+  {
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{percent} %"
+    },
+    "battery": {
+      "bat": "BAT0",
+      "format": "{icon}  {capacity}",
+      "format-charging": " {capacity}",
+      "format-icons": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "format-plugged": " {capacity}",
+      "interval": 1,
+      "states": {
+        "critical": 10,
+        "warning": 30
+      },
+      "tooltip": false
+    },
+    "battery#ico": {
+      "bat": "BAT0",
+      "format": "{icon} ",
+      "format-charging": " ",
+      "format-icons": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "format-plugged": " ",
+      "interval": 1,
+      "states": {
+        "critical": 10,
+        "warning": 30
+      },
+      "tooltip": false
+    },
+    "battery#helper": {
+      "bat": "BAT0",
+      "format": "{capacity} %",
+      "interval": 1,
+      "states": {
+        "critical": 15,
+        "warning": 30
+      },
+      "tooltip": false
+    },
+    "clock": {
+      "format": "{:%H:%M  %e %B  %A}",
+      "tooltip": false
+    },
+    "cpu#ico": {
+      "format": " ",
+      "tooltip": false
+    },
+    "cpu#helper": {
+      "format": "{usage} %",
+      "interval": 3,
+      "tooltip": false
+    },
+    "custom/backlicon": {
+      "format": " ",
+      "tooltip": false
+    },
+    "custom/baticon": {
+      "format": " ",
+      "tooltip": false
+    },
+    "custom/langicon": {
+      "format": " ",
+      "tooltip": false
+    },
+    "custom/memicon": {
+      "format": " ",
+      "on-click": "pkill htop || kitty --title=smtr -e htop",
+      "tooltip": false
+    },
+    "custom/nixicon": {
+      "format": "󱄅",
+      "on-click": "rofi -show drun -config ~/.config/rofi/menu.rasi -show-icons",
+      "tooltip": false
+    },
+    "custom/power": {
+      "escape": true,
+      "format": "{icon}",
+      "format-icons": "",
+      "on-click": "poweroff",
+      "tooltip": false
+    },
+    "custom/tmpicon": {
+      "format": " ",
+      "on-click": "pkill htop || kitty --title=smtr -e htop",
+      "tooltip": false
+    },
+    "tray": {
+    "icon-size": 20,
+    "spacing": 2,
+    "show-passive-items": true
+    },
+    "gtk-layer-shell": true,
+    "hyprland/language": {
+      "format": "{}",
+      "format-en": "US",
+      "format-ru": "RU"
+    },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-icons": {},
+      "on-click": "activate",
+      "persistent_workspaces": {
+        "*": 7
+      },
+      "tooltip": false
+    },
+    "layer": "top",
+    "margin-top": -20,
+    "memory": {
+      "format": "{used}Gb",
+      "interval": 15,
+      "max-lenght": 10,
+      "tooltip": false
+    },
+    "modules-center": [
+      "clock"
+    ],
+    "modules-left": [
+      "hyprland/workspaces",
+      "custom/langicon",
+      "hyprland/language",
+      "pulseaudio",
+      "tray"
+    ],
+    "modules-right": [
+      "cpu#ico",
+      "cpu#helper",
+      "custom/memicon",
+      "memory",
+      "battery#ico",
+      "battery#helper",
+      "custom/backlicon",
+      "backlight",
+      "custom/power"
+    ],
+    "position": "bottom",
+    "pulseaudio": {
+      "format": "<span color='#b4befe'>{icon}</span>  {volume} %",
+      "format-icons": {
+        "default": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "format-muted": "<span color='#7f849c'> </span>",
+      "on-click": "pkill pulsemixer || kitty --title=pm -e pulsemixer",
+      "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+      "scroll-step": 5,
+      "tooltip": false
+    },
+    "spacing": 0,
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "{temperatureC}°C",
+      "on-click": "pkill htop || kitty --title=smtr -e htop",
+      "tooltip": false
+    }
+  }
+]

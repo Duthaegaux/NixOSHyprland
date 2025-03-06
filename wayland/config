@@ -1,0 +1,145 @@
+[
+  {
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{percent}"
+    },
+    "battery": {
+      "bat": "BAT0",
+      "format": "{icon}  {capacity}",
+      "format-charging": " {capacity}",
+      "format-icons": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "format-plugged": " {capacity}",
+      "interval": 1,
+      "states": {
+        "critical": 10,
+        "warning": 30
+      },
+      "tooltip": false
+    },
+    "battery#bat2": {
+      "bat": "BAT1",
+      "format": "{icon}  {capacity}",
+      "format-charging": " {capacity}",
+      "format-icons": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "format-plugged": " {capacity}",
+      "interval": 1,
+      "states": {
+        "critical": 15,
+        "warning": 30
+      },
+      "tooltip": false
+    },
+    "clock": {
+      "format": "{:%H:%M  %e %B  %A}",
+      "tooltip": false
+    },
+    "cpu": {
+      "format": "  {usage}",
+      "interval": 3
+    },
+    "custom/backlicon": {
+      "format": " ",
+      "tooltip": false
+    },
+    "custom/langicon": {
+      "format": " ",
+      "tooltip": false
+    },
+    "custom/memicon": {
+      "format": " ",
+      "on-click": "pkill htop || kitty --title=smtr -e htop",
+      "tooltip": false
+    },
+    "custom/power": {
+      "escape": true,
+      "format": "{icon}",
+      "format-icons": "",
+      "on-click": "pkill Hyprland",
+      "tooltip": false
+    },
+    "custom/tmpicon": {
+      "format": " ",
+      "on-click": "pkill htop || kitty --title=smtr -e htop",
+      "tooltip": false
+    },
+    "gtk-layer-shell": true,
+    "hyprland/language": {
+      "format": "{}",
+      "format-en": "US",
+      "format-ru": "RU"
+    },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-icons": {},
+      "on-click": "activate",
+      "persistent_workspaces": {
+        "*": 7
+      },
+      "tooltip": false
+    },
+    "layer": "top",
+    "margin-top": -20,
+    "memory": {
+      "format": "{used}Gb",
+      "interval": 15,
+      "max-lenght": 10,
+      "tooltip": false
+    },
+    "modules-center": [
+      "clock"
+    ],
+    "modules-left": [
+      "hyprland/workspaces",
+      "custom/langicon",
+      "hyprland/language",
+      "pulseaudio"
+    ],
+    "modules-right": [
+      "battery#bat2",
+      "battery",
+      "custom/backlicon",
+      "backlight",
+      "custom/memicon",
+      "memory",
+      "custom/tmpicon",
+      "temperature",
+      "custom/power"
+    ],
+    "position": "bottom",
+    "pulseaudio": {
+      "format": "<span color='#b4befe'>{icon}</span>  {volume}",
+      "format-icons": {
+        "default": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "format-muted": "<span color='#7f849c'> </span>",
+      "on-click": "pkill pulsemixer || kitty --title=pm -e pulsemixer",
+      "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+      "scroll-step": 5,
+      "tooltip": false
+    },
+    "spacing": 0,
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "{temperatureC}°C",
+      "on-click": "pkill htop || kitty --title=smtr -e htop",
+      "tooltip": false
+    }
+  }
+]
